@@ -1,0 +1,36 @@
+import empresa.*
+import remeras.*
+import pedidos.*
+import sucursales.*
+
+
+describe "test empresa de remeras" {
+	
+	var lisa = new Lisa (color=blanco,talle=40)
+	var lisa = new Lisa (color=negro,talle=48)
+	var lisa = new Lisa (color=azul,talle=42)
+	var lisa = new Lisa (color=rosa,talle=42)
+	var bor = new Bordada (color=verde, talle=40, cantidadDeColores=1)
+	var bor = new Bordada (cantidadDeColores=5)
+	var bor = new Bordada (cantidadDeColores=8)
+	var subli = new Subliminada (ancho=2,largo=5,valorXcentimetro = 0.50)
+	var subli = new Subliminada (ancho=3,largo=8,valorXcentimetro = 0.50)
+	var disney = new Autor (nombre=disney,costo=100)
+	var coca = new Autor (nombre=coca,costo=50)
+	var pedido1 = new Pedido (cantidadDeRemeras=10, tipoDeRemera=lisa)
+	var pedido2 = new Pedido (cantidadDeRemeras=20, tipoDeRemera=bor)
+	var pedido3 = new Pedido (cantidadDeRemeras=5, tipoDeRemera=subli)
+	var sucu1 = new Sucursal (nombre=flores)
+	var sucu2 = new Sucursal (nombre=avellaneda)
+
+	fixture{
+		
+		empresa.agregar(sucu1)
+		empresa.agregar(sucu2)
+		empresa.agregar(pedido1)
+		empresa.agregar(pedido2)
+		empresa.agregar(pedido3)
+	}
+
+	
+}
